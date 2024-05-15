@@ -1,57 +1,33 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: 'Oswald', sans-serif;
-    font-size: 1em;
-    background: linear-gradient(to bottom, #E30B17, #46276E);
-    color: #fff;
-  }
-  
-  a {
-    color: #fff;
-    text-decoration: none;
-  }
-  
-  header,
-  footer {
-      background-color: #fff;
-      color: black;
-      padding: 20px 50px;
-  }
-  
-  nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  nav a {
-    margin-left: 30px;
-    color: black;
-    font-weight: bold;
-  }
-  
-  nav a:hover {
-    color: #8a7f7f;
-  }
-  
-  main {
-    padding: 50px;
-  }
-  
-  
-  h1 {
-    font-size: 3em;
-    color: #fff;
-    margin-bottom: 20px;
-    margin-top: 50px;
-    margin-left: 30px;
-  }
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1em;
+  background: linear-gradient(to bottom left, rgb(230, 230, 250), rgb(70, 39, 110));
+  color: rgb(255, 255, 255);
+}
+
+header,
+footer {
+    background-color: rgb(230, 230, 250);
+    color: rgb(255, 0, 0);
+    padding: 40px 50px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+main {
+  padding: 50px;
+}
+
   p {
     font-size: 1.1em;
     margin-bottom: 20px;
@@ -64,7 +40,7 @@
   
   .cta1 {
     background-color: #46276E;
-    color: #fff;
+    color: rgb(255, 0, 0);
     margin-top: 30px;
     margin-left: 50px;
     border-radius: 5px;
@@ -72,38 +48,27 @@
     text-decoration: none;
     font-size: 1em;
   }
-  
-  .cta1:hover {
-    background-color: #8a7f7f;
-  }
-  
-
-  
 
   label {
     font-weight: bold;
   }
   
   input[type="submit"] {
-    background-color: #46276E;
-    color: #fff;
+    background-color: rgb(70, 39, 110);
+    color: rgb(255, 0, 0);
     border: none;
     border-radius: 5px;
-    padding: 15px 30px;
+    padding: 30px 30px;
     cursor: pointer;
     font-size: 1em;
   }
-  
-  input[type="submit"]:hover {
-    background-color: #8a7f7f;
-  }
-  
+
   footer {
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 20px 50px;
-    background-color: white;
+    background-color: rgb(230, 230, 250);
   }
   
   .lien-icone:hover {
@@ -129,7 +94,7 @@
 }
 
 .modal-content {
-    background-color: #fefefe;
+    background-color: rgb(255, 0, 0);
     margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
@@ -137,7 +102,7 @@
 }
 
 .close {
-    color: #aaaaaa;
+    color: rgb(255, 0, 0);
     float: right;
     font-size: 28px;
     font-weight: bold;

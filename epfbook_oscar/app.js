@@ -116,7 +116,7 @@ function parseCsvWithHeader(filepath, cb) {
 }
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, "./views/new-home.html"))
+  res.sendFile(path.join(__dirname, "./views/home.html"))
 })
 
 app.get('/api/students', (req, res) => {
@@ -200,10 +200,6 @@ app.get("/students", (req, res) => {
     });
   });
 });
-
-app.get('/a-propos', (req, res) => {
-  res.sendFile(path.join(__dirname, "./views/a-propos.html"))
-})
 
 app.set('views', './views'); 
 app.set('view engine', 'ejs');

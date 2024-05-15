@@ -6,23 +6,24 @@
     <link rel="stylesheet" href="/students-id.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jersey+25+Charted&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
-    <title>Détails de l'étudiant</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>Détails</title>
 </head>
 
 <body>
     <header>
         <nav>
-            <img src="/pictures/EPF_Logo.jpg" alt="LogoEF" class="LogoEPF">
             <div>
                 <a href="/">Accueil</a>
-                <a href="/register">Inscrire un étudiant</a>
-                <a href="/a-propos">À propos</a>
+            </div>
+            <img src="/pictures/EPF_Logo.png" alt="LogoEF" class="LogoEPF">
+            <div>
+                <a href="/register">Inscription</a>
             </div>
         </nav>
     </header>
     <div class="container">
-        <h1>Détails de l'étudiant</h1>
+        <h1>Détails</h1>
         <div class="student-details">
             <p><strong>ID :</strong> <%= student.id %></p>
             <p><strong>Nom :</strong> <%= student.name %></p>
@@ -36,26 +37,5 @@
             </form>
         </div>
     </div>
-    
-    <footer>
-        <div>
-            <a target="_blank" href="https://www.instagram.com/epfengineeringschool" class="lien-icone">
-                <img src="/pictures/instagram.png"  >
-            </a>
-        </div>
-    </footer>
-    <script type="text/javascript">
-        (function(d, t) {
-            var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
-            v.onload = function() {
-              window.voiceflow.chat.load({
-                verify: { projectID: '6566608d18b33e0007c8c464' },
-                url: 'https://general-runtime.voiceflow.com',
-                versionID: 'production'
-              });
-            }
-            v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
-        })(document, 'script');
-      </script>
 </body>
 </html>

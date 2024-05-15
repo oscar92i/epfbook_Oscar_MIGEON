@@ -1,17 +1,40 @@
-<html lang="en">
+<!DOCTYPE html>
+<html lang="fr">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/home.css">
-    <title>EPFBook - Accueil</title>
+    <meta charset="utf-8" >
+    <title>Accueil - EPFBook</title>
+    <link href="home.css" rel="stylesheet" >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <div class="container">
-        <h1>Bienvenue sur EPFBook</h1>
-        <p>EPFBook est un réseau social destiné aux étudiants de l'EPF.</p>
-        <p>Connectez-vous pour découvrir et partager des informations avec vos camarades !</p>
-        <a href="/login">Se connecter</a> | <a href="/register">S'inscrire</a>
-        <p><a href="/students">Ils nous ont déjà rejoint!</a></p>
-    </div>
+    <header>
+        <nav>
+            <div>
+                <a href="/">Accueil</a>
+            </div>
+            <img src="/pictures/EPF_Logo.png" alt="LogoEF" class="LogoEPF">
+            <div>
+                <a href="/register">Inscription</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="accueil">
+            <div>
+                <h1>Le <strong>réseau social</strong> des peufiens - EPF Book</h1>
+            </div>
+
+        </section>
+        
+        <section class="Communaute">
+            <h2><a href="/students" class="cta">Les élèves de l'EPF Book</a></h2>
+            <img src="/pictures/social.png" alt="social" class="social">
+        </section>
+    </main>
 </body>
+
 </html>

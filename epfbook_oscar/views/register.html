@@ -7,17 +7,18 @@
     <link href="register.css" rel="stylesheet" >
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jersey+25+Charted&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <header>
         <nav>
-            <img src="/pictures/EPF_Logo.jpg" alt="LogoEF" class="LogoEPF">
             <div>
                 <a href="/">Accueil</a>
-                <a href="/register">Inscrire un étudiant</a>
-                <a href="/a-propos">À propos</a>
+            </div>
+            <img src="/pictures/EPF_Logo.png" alt="LogoEF" class="LogoEPF">
+            <div>
+                <a href="/register">Inscription</a>
             </div>
         </nav>
     </header>
@@ -25,7 +26,7 @@
     <form id="registrationForm" class="registrationForm">
         <label for="name">Nom:</label><br>
         <input type="text" id="name" name="name" required><br>
-        <label for="school">École:</label><br>
+        <label for="school">Nom de l'école:</label><br>
         <input type="text" id="school" name="school" required><br><br>
         <button type="submit">S'inscrire</button>
     </form>
@@ -54,26 +55,7 @@
             }
         });
     </script>
-    <footer>
-        <div>
-            <a target="_blank" href="https://www.instagram.com/epfengineeringschool" class="lien-icone">
-                <img src="/pictures/instagram.png"  >
-            </a>
-        </div>
-    </footer>
-    <script type="text/javascript">
-        (function(d, t) {
-            var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
-            v.onload = function() {
-              window.voiceflow.chat.load({
-                verify: { projectID: '6566608d18b33e0007c8c464' },
-                url: 'https://general-runtime.voiceflow.com',
-                versionID: 'production'
-              });
-            }
-            v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
-        })(document, 'script');
-      </script>
+    <img src="/pictures/inscription.png" alt="inscription" class="inscription">
 </body>
 
 </html>
