@@ -1,4 +1,5 @@
 
+// Setup part
 const express = require('express')
 const port = 3000
 const fs = require("fs")
@@ -7,24 +8,20 @@ const app = require('express')()
 const basicAuth = require('express-basic-auth')
 app.use(express.urlencoded({ extended: true }));
 
-
+// APP part
 app.use(
   basicAuth({
-    //users: { admin: "supersecret"},
-    //users: { [process.env.ADMIN_USERNAME]: process.env.ADMIN_PASSWORD },
     authorizer: clearPasswordAuthorizer,
-    //authorizer: encryptedPasswordAuthorizer,
     authorizeAsync: true,
     challenge: true,
 }))
 
+// function are defined here
 function clearPasswordAuthorizer(username, password, cb) {
   if (!username || !password) {
     return cb(new Error("Username or password were not defined"), false);
   }
-  // Parse the CSV file: this is very similar to parsing students!
   parseCsvWithHeader("./users-cleaned.csv", (err, users) => {
-    // Check that our current user belong to the list
     const storedUser = users.find((possibleUser) => {
       if (!possibleUser.index1) {
         console.warn(
@@ -33,23 +30,15 @@ function clearPasswordAuthorizer(username, password, cb) {
         );
         return false;
       }
-      // NOTE: a simple comparison with === is possible but less safe
       return basicAuth.safeCompare(username, possibleUser.index1);
     });
 
     if (!storedUser) {
       
       cb(null, false);
-    } else if (!storedUser.index2) {
-      console.warn(
-        "Found a user with no password in users-clear.csv",
-        storedUser
-      );
-      cb(null, false);
     } else if (!basicAuth.safeCompare(password, storedUser.index2)) {
       cb(null, false);
     } else {
-      // success: user is found and have the right password
       cb(null, true);
     }
   });
@@ -59,11 +48,8 @@ function clearPasswordAuthorizer(username, password, cb) {
 function parseCsvWithHeader(filepath, cb) {
   const rowSeparator = "\n";
   const cellSeparator = ",";
-  // example based on a CSV file
   fs.readFile(filepath, "utf8", (err, data) => {
-    //console.log("data",data);
     const rows = data.split(rowSeparator);
-    // first row is an header I isolate it
     const [headerRow, ...contentRows] = rows;
     const header = headerRow.split(cellSeparator);
 
@@ -127,7 +113,6 @@ app.get('/students-csv-parsed', (req, res) => {
 
 app.use(express.json());
 
-
 app.get('/register', (req, res) => {
   res.sendFile(path.join(__dirname, "./views/register.html"));
 });
@@ -141,7 +126,6 @@ app.post('/api/students/create', (req, res) => {
   
   const csvLine = `\n${name},${school}`;
 
-  // Utiliser fs.appendFileSync pour garantir que l'opération est synchrone
   try {
     fs.appendFileSync('students.csv', csvLine);
     console.log('Nouvel étudiant ajouté:', { name, school });
@@ -169,47 +153,33 @@ app.set('views', './views');
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname+'/public'));
 
+// on wich port is the app
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
 
 
 const getStudentsFromCsvfile = (cb) => {
-  // example based on a CSV file
   parseCsvWithHeader("./students.csv", cb);
 };
 
-
-
-
 app.get('/students/:id', (req, res) => {
-  const studentId = parseInt(req.params.id)+1 ; // Convertir l'ID de l'étudiant en nombre entier
-
-  // Lire le fichier CSV
+  const studentId = parseInt(req.params.id)+1 ;
   fs.readFile('students.csv', 'utf8', (err, data) => {
     if (err) {
       console.error('Erreur lors de la lecture du fichier CSV :', err);
       return res.status(500).send('Erreur lors de la lecture du fichier CSV');
     }
-
-    // Diviser les lignes du fichier CSV
     const rows = data.split('\n');
-
-    // Vérifier si l'ID fourni est valide
     if (studentId < 0 || studentId >= rows.length) {
       return res.status(404).send('Étudiant non trouvé');
     }
-
-    // Obtenir les données de l'étudiant à partir de la ligne correspondant à l'ID
     const studentData = rows[studentId].split(',');
     const student = { id: studentId, name: studentData[0], school: studentData[1] };
     console.log()
-
-    // Rendre la page de l'étudiant avec ses données
     res.render('students-id.ejs', { student: student });
   });
 });
-
 
 app.post('/students/:id/update', (req, res) => {
   const studentId = parseInt(req.params.id); 
@@ -220,23 +190,18 @@ app.post('/students/:id/update', (req, res) => {
           console.error('Erreur lors de la lecture du fichier CSV :', err);
           return res.status(500).send('Erreur lors de la lecture du fichier CSV');
       }
-
       const rows = data.split('\n');
-
       if (studentId < 0 || studentId >= rows.length) {
           return res.status(404).send('Étudiant non trouvé');
       }
-
       const updatedStudent = `${name},${school}`;
       console.log("up data:", updatedStudent, studentId)
       rows[studentId] = updatedStudent;
-
       fs.writeFile('students.csv', rows.join('\n'), 'utf8', (err) => {
           if (err) {
               console.error('Erreur lors de l\'écriture dans le fichier CSV :', err);
               return res.status(500).send('Erreur lors de la mise à jour des informations de l\'étudiant');
           }
-          
           res.redirect(`/students/${studentId}`);
       });
   });
