@@ -54,49 +54,34 @@ admin/admin
 
 ## Installation
 
-1. 
-
    ```bash
-   git clone https://github.com/EPF-MDE/MMMDE4IN19-22-EPFBOOK-montagnon-hugo.git
+   git clone https://github.com/oscar92i/epfbook_Oscar_MIGEON/tree/main
    ```
-
-
-2. Install dependencies (if needed), for example:
+then
 
    ```bash
    npm install
    ```
-
-3. Start the server:
+then
 
    ```bash
-   nodemon app.js
+   run npm dev
+   ```
+   or
+   ```bash
+   docker run -p 49160:3000 -d oscarmigeon/docker-epfbook
    ```
 
-4. Access the application in your browser at  [http://localhost:3000](http://localhost:3000).
+Your epfbook access will be on localhost:49160 if use docker or localhost:3000 if you use npm run dev.
 
-## Character with id 5 in the Rick and Morty API
+## Rick and Morty
 
-The character with the ID number 5 in the Rick and Morty API is recognized as Jerry Smith.
+Set up and request in the Insomnia app:
 
-This character was identified by making modifications to our app.js file within our application. Specifically, we added a new route with the following URL:
-
-```javascript
-app.get('/rickandmorty/character/:id', function (req, res) {
- axios.get(`https://rickandmortyapi.com/api/character/${req.params.id}`)
- .then(function (response) {
-     res.send(response.data);
- })
- .catch(function (error) {
-     console.log(error);
- });
-});
-
-Once this route was added, when the user navigates to http://localhost:3000/rickandmorty/character/5 (or replace "localhost" with the machine's IP address), our application executes a GET request to the aforementioned Rick and Morty API URL. 
-Consequently, it retrieves and presents the data of the character assigned with id 5.
-
-
-```
+-    Open Insomnia and create a new request.
+-    Choose the HTTP method as GET.
+-    Enter the URL as https://rickandmortyapi.com/api/character/5 (or replace 5 with any desired character ID).
+-    Click the "Send" button in Insomnia to execute the request.
 
 ## Programmer
 
