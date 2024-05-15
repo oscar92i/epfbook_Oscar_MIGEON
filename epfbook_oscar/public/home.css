@@ -1,0 +1,31 @@
+body {
+    font-family: Arial, sans-serif;
+    color: #227baf;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #E30B17, #46276E); /* Couleur de fond */
+}
+
+.container {
+    max-width: 800px;
+    margin: 250px 450px;
+    padding: 20px;
+    text-align: center;
+    background-color: #46276E; /* Couleur de fond violet */
+    color: white; /* Couleur du texte en blanc */
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #E30B17; /* Couleur rouge pour le titre */
+}
+
+a {
+    font-size: 17px;
+    color: rgb(190, 177, 177); /* Couleur du texte en blanc */
+}
+
+p {
+    font-size: 17px;
+    color: white; /* Couleur du texte en blanc */
+}

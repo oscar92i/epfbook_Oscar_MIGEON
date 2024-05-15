@@ -1,0 +1,49 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Liste des étudiants</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <img src="/pictures/EPF_Logo.jpg" alt="LogoEF" class="LogoEPF">
+            <div>
+                <a href="/">Accueil</a>
+                <a href="/register">Inscrire un étudiant</a>
+                <a href="/a-propos">À propos</a>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <h1>Liste des étudiant(e)s</h1>
+        <ul>
+            <% students.forEach(function(student, index) { %>
+                <li><strong>Nom:</strong> <%= student.index1 %><br><strong>École:</strong> <%= student.index2 %><br><a href="/students/<%= index %>">Détail / édition</a></li>
+            <% }) %>
+            
+        </ul>
+    </div>
+    <footer>
+        <div>
+            <a target="_blank" href="https://www.instagram.com/epfengineeringschool" class="lien-icone">
+                <img src="/pictures/instagram.png">
+            </a>
+        </div>
+    </footer>
+    <script type="text/javascript">
+        (function(d, t) {
+            var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+            v.onload = function() {
+              window.voiceflow.chat.load({
+                verify: { projectID: '6566608d18b33e0007c8c464' },
+                url: 'https://general-runtime.voiceflow.com',
+                versionID: 'production'
+              });
+            }
+            v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+        })(document, 'script');
+      </script>
+</body>
+</html>

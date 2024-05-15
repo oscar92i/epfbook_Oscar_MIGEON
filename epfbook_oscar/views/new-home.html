@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" >
+    <title>Accueil - EPFBook</title>
+    <link href="new_home.css" rel="stylesheet" >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+25+Charted&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <img src="/pictures/EPF_Logo.jpg" alt="LogoEF" class="LogoEPF">
+            <div>
+                <a href="/">Accueil</a>
+                <a href="/register">Inscrire un étudiant</a>
+                <a href="/a-propos">À propos</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="accueil-introduction">
+            <div>
+                <h1>EPFBook redécouvre ton école !</h1>
+                <p>
+                    Le nouveau <em>réseau social</em> de l'EPF qui vous permettra de
+                    <em>partager</em> vos experiences au sein de l'école, de <em>consulter</em>
+                    nos dernières informations et de <em>discuter</em> avec tous les membres de l' EPF. 
+                </p>
+                <a href="#contact" class="cta1">UNE QUESTION ? Envoie la nous ! </a>
+            </div>
+            
+        </section>
+        <section class="Communaute">
+            <h2><a href="/students" class="cta"> Ils nous ont déjà rejoint!</a></h2>
+        </section>
+
+        <section id="contact" class="section-contact">
+            <h2>Nous contacter</h2>
+            <form method="get" action="#">
+                <div class="form-nom-emaail">
+                    <div class="form-column">
+                        <label for="nom">nom</label>
+                        <input type="text" name="nom" id="nom" >
+                    </div>
+                    <div class="form-column">
+                        <label for="email">email</label>
+                        <input type="email" name="email" id="email" >
+                    </div>
+                </div>
+                <label for="message">message</label>
+                <textarea name="message" id="message" rows="10"></textarea>
+                <input type="submit" value="ENVOYER" class="cta" >
+            </form>
+        </section>
+    </main>
+    <footer>
+        <div>
+            <a target="_blank" href="https://www.instagram.com/epfengineeringschool" class="lien-icone">
+                <img src="/pictures/instagram.png"  >
+            </a>
+        </div>
+    </footer>
+    <script type="text/javascript">
+        (function(d, t) {
+            var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+            v.onload = function() {
+              window.voiceflow.chat.load({
+                verify: { projectID: '6566608d18b33e0007c8c464' },
+                url: 'https://general-runtime.voiceflow.com',
+                versionID: 'production'
+              });
+            }
+            v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+        })(document, 'script');
+      </script>
+</body>
+
+</html>
