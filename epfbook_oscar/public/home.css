@@ -31,32 +31,18 @@ main {
 h1 {
   font-size: 3em;
   color: rgb(255, 255, 255);
-  margin-bottom: 20px;
 }
 
 p {
   font-size: 1.2em;
-  margin-bottom: 30px;
 }
 
 .Communaute {
   text-align: bottom left;
-  margin-bottom: 100px;
 }
 
 .Communaute h2 {
   font-size: 2em;
-}
-
-.Communaute a {
-  background-color: rgb(0,0,0
-  );
-  color: rgb(255, 255, 255);
-}
-
-footer {
-  padding: 40px 50px;
-  background-color: rgb(255, 255, 255);
 }
 
 .LogoEPF {

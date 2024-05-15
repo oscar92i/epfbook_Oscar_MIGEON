@@ -27,17 +27,6 @@ nav {
 main {
   padding: 50px;
 }
-
-  p {
-    font-size: 1.1em;
-    margin-bottom: 20px;
-    margin-left: 30px;
-  }
-
-  .student-details {
-    margin-bottom: 210px ;
-  }
-  
   .cta1 {
     background-color: #46276E;
     color: rgb(255, 0, 0);
@@ -56,11 +45,6 @@ main {
   input[type="submit"] {
     background-color: rgb(70, 39, 110);
     color: rgb(255, 0, 0);
-    border: none;
-    border-radius: 5px;
-    padding: 30px 30px;
-    cursor: pointer;
-    font-size: 1em;
   }
 
   footer {
@@ -80,32 +64,13 @@ main {
     height: auto;
   }
   
-  /* Modal styles */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.4);
-}
-
-.modal-content {
-    background-color: rgb(255, 0, 0);
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-}
+  .details {
+    width: 300px;
+    height: auto;
+  }
 
 .close {
     color: rgb(255, 0, 0);
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
 }
 
 .close:hover,

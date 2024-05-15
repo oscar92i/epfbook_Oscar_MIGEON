@@ -35,17 +35,18 @@ main {
 h1 {
     font-size: 28px;
     color: black;
-    text-align: center;
-    margin-bottom: 20px;
 }
 
 ul {
-    list-style: none;
-    padding: 0;
     color: rgb(255, 0, 0)
 }
 
 .LogoEPF {
     width: 100px;
+    height: auto;
+  }
+
+  .membres {
+    width: 300px;
     height: auto;
   }

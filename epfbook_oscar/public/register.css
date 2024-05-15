@@ -43,15 +43,6 @@ button[type="submit"] {
     color: rgb(255, 255, 255);
 }
 
-footer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-top: 50px;
-    padding-bottom: 20px;
-    background-color: rgb(230, 230, 250);
-}
-
 .LogoEPF {
     width: 100px;
     height: auto;

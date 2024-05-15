@@ -18,42 +18,6 @@ app.use(
     challenge: true,
 }))
 
-const encryptedPasswordAuthorizer = (username, password, cb) => {
-  if (!username || !password) {
-    return cb(new Error("Username or password were not defined"), false);
-  }
-  // Parse the CSV file: this is very similar to parsing students!
-  parseCsvWithHeader("./users.csv", (err, users) => {
-    // Check that our current user belong to the list
-    const storedUser = users.find((possibleUser) => {
-      if (!possibleUser.username) {
-        console.warn(
-          "Found a user with no username in users-clear.csv",
-          possibleUser
-        );
-        return false;
-      }
-      // NOTE: a simple comparison with === is possible but less safe
-      return basicAuth.safeCompare(possibleUser.username, username);
-    });
-    if (!storedUser) {
-      cb(null, false);
-    } else if (!storedUser.password) {
-      console.warn(
-        "Found a user with no password in users-clear.csv",
-        storedUser
-      );
-      cb(null, false);
-    } else {
-      // now we check the password
-      // bcrypt handles the fact that storedUser password is encrypted
-      // it is asynchronous, because this operation is long
-      // so we pass the callback as the last parameter
-      bcrypt.compare(password, storedUser.password, cb);
-    }
-  });
-};
-
 function clearPasswordAuthorizer(username, password, cb) {
   if (!username || !password) {
     return cb(new Error("Username or password were not defined"), false);

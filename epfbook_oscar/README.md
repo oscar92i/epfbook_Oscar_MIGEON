@@ -1,52 +1,60 @@
-# MMMDE4IN19-22-EPFBOOK-montagnon-hugo
+# EPFBOOK Oscar MIGEON
 
-# EPFBook
+# EPFBOOK
 
-EPFBook is a social network developed as part of the Web Programming course at EPF. This project allows EPF students to share their experiences, check the latest school information, and chat with other members of the EPF community.
+EPF Book is a social network for EPF students. Students can link with other students and sign up.
+There is some features that are descibed below.
+This project is delivered for a school project.
 
-Here not all features are functional, but those that can be used are detailed below.
+## CSS
 
-## Features
+The overall central theme is EPF colors, especially the purple. There is many shades of purple.
+There is also the other color of the school: the red, that appears on some text/button.
+Each webpage come with an image linked with its theme.
 
-- User registration and login (via information stored in CSV files)
-- Assistance form (information assigned to variables that can be stored or processed)
-- Consultation of registered school students on the platform
-- Functional and available assistance ChatBot to improve the user experience.
-- Interactive and non-static buttons
-- Clickable Instagram logo to access the EPF account
+## Features characteristics
 
-## Available Pages
+- You can sign up and sign in 
+   -> storage through csv
+- There is the list of each students registered on EPFBOOK
+- Features are distibuted on different web pages.
+- It runs with Docker
 
-- Login popup to your account, for example:
+## Docker
 
-id: you
+There is a docker images, dockerfile and dockerignore.
 
-password: passw0rd$
+In the terminal,
 
-- Home Page (endpoint "/"):
+```
+docker build . -t oscarmigeon/docker-epfbook
+docker images
+docker run -p 49160:3000 -d oscarmigeon/docker-epfbook
+```
 
-A menu to access different pages is available in the top right corner. In addition, the buttons provide access to the contact part or to the list of registered students (endpoint "/students"). Students and their information can be edited in this menu.
+then connect to localhost:49160
 
-- Register a Student Page (endpoint "/register"):
+## Setup authenfication
 
-Allows entering a name and a school. The latter will be added to the database using a POST method (and the endpoint "/api/students/create").
+- the username and password:
+admin/admin
 
-- About Page:
-
-Explains the purpose of the website and points to the associated GitHub repository (endpoint "/a-propos").
 
 ## Technologies Used
 
+- JavaScript
 - Node.js
 - Express.js
 - HTML
 - CSS
-- JavaScript
-- VoiceFlow
+- Docker
+- VisualStudio
+- EJS
+- Excel (CSV)
 
 ## Installation
 
-1. Clone the GitHub repository or download and unzip the zip:
+1. 
 
    ```bash
    git clone https://github.com/EPF-MDE/MMMDE4IN19-22-EPFBOOK-montagnon-hugo.git
@@ -90,8 +98,9 @@ Consequently, it retrieves and presents the data of the character assigned with 
 
 ```
 
-## Author
+## Programmer
 
-This project was developed by [Hugo Montagnon](https://github.com/hmtgn).
+Oscar MIGEON
+EPF Student
 
-
+https://github.com/oscar92i
